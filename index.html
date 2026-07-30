@@ -207,6 +207,52 @@
     font-size: 0.88rem;
     color: var(--muted);
   }
+  .ledger {
+    margin-top: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 26px;
+    box-shadow: var(--shadow);
+  }
+  .ledger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+  .ledger-row:last-child { border-bottom: none; }
+  .ledger-row .v {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    flex: none;
+  }
+  .ledger-row.muted-row { color: var(--muted); font-size: 0.88rem; }
+  .ledger-row.highlight {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .ledger-row.highlight .v { color: var(--accent); }
+  .ledger-row.total {
+    border-top: 2px solid var(--accent);
+    margin-top: 4px;
+    padding-top: 18px;
+  }
+  .ledger-row.total span:first-child {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 24, 'wght' 520, 'SOFT' 60, 'WONK' 0;
+    font-size: 1.2rem;
+  }
+  .ledger-row.total .v {
+    font-family: 'Fraunces', serif;
+    font-variation-settings: 'opsz' 30, 'wght' 620, 'SOFT' 60, 'WONK' 0;
+    font-size: 2rem;
+    color: var(--accent);
+  }
+
   .tiers-intro { margin-top: 34px; }
 
   .tiers {
@@ -389,6 +435,45 @@
 
   <div class="divider"><span class="mark"></span></div>
 
+  <section class="roi reveal">
+    <div class="eyebrow">Un ejemplo, no una promesa</div>
+    <h2>Esto se paga solo — y de sobra</h2>
+    <p class="lead" style="margin-top:12px;">Con un volumen conservador y el recordatorio automático del Nivel Bronce, así de rápido se recupera la mensualidad:</p>
+    <div class="ledger">
+      <div class="ledger-row">
+        <span>Citas al mes (volumen conservador)</span>
+        <span class="v">200</span>
+      </div>
+      <div class="ledger-row">
+        <span>Ticket medio por servicio</span>
+        <span class="v">45 €</span>
+      </div>
+      <div class="ledger-row muted-row">
+        <span>Hoy: 20% se pierde por inasistencias → 40 citas</span>
+        <span class="v">−1.800 €</span>
+      </div>
+      <div class="ledger-row muted-row">
+        <span>Con recordatorio automático: baja al 5% → solo 10 citas</span>
+        <span class="v">−450 €</span>
+      </div>
+      <div class="ledger-row highlight">
+        <span>Citas que recuperas al mes</span>
+        <span class="v">+1.350 €</span>
+      </div>
+      <div class="ledger-row">
+        <span>Nivel Bronce, mensualidad</span>
+        <span class="v">−149 €</span>
+      </div>
+      <div class="ledger-row total">
+        <span>Ganancia neta al mes</span>
+        <span class="v">1.201 €</span>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:22px;">Ajusta estos números a tu volumen real de citas — con cualquier cifra razonable para Trends, el resultado sigue siendo positivo.</p>
+  </section>
+
+  <div class="divider"><span class="mark"></span></div>
+
   <section class="tiers-section reveal">
     <h2>Tres niveles, un mismo sistema</h2>
     <p class="lead tiers-intro">Cada nivel incluye todo el anterior y añade una capa nueva de valor. Se puede empezar por el Nivel I y subir cuando el negocio lo pida.</p>
@@ -473,7 +558,7 @@
     <p class="lead">Los tres niveles están pensados para crecer con Trends, no para competir entre sí. El Nivel I ya resuelve el problema más urgente; el II y el III se pueden sumar más adelante sin rehacer nada de lo anterior.</p>
   </section>
 
-  <div class="fine-print">Precios, tiempos de implementación y alcance son estimaciones de esta propuesta, sujetas a confirmación final antes de empezar. Los datos de inasistencias y reseñas son promedios del sector (SchedulingKit, DaySmart, BrightLocal), no cifras medidas de Trends.</div>
+  <div class="fine-print">Precios, tiempos de implementación y alcance son estimaciones de esta propuesta, sujetas a confirmación final antes de empezar. Los datos de inasistencias y reseñas son promedios del sector (SchedulingKit, DaySmart, BrightLocal); el ejemplo de recuperación en euros usa un volumen y ticket medio conservadores, no cifras medidas de Trends.</div>
 
 </div>
 
