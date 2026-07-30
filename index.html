@@ -207,6 +207,24 @@
     font-size: 0.88rem;
     color: var(--muted);
   }
+  .roi-case {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .roi-case p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 68ch;
+  }
+  .roi-case p strong {
+    color: var(--text);
+  }
+  .roi-case p strong:first-child {
+    color: var(--accent);
+  }
+
   .ledger {
     margin-top: 30px;
     background: var(--surface);
@@ -438,22 +456,25 @@
   <section class="roi reveal">
     <div class="eyebrow">Un ejemplo, no una promesa</div>
     <h2>De dónde sale el 1.800 €</h2>
-    <p class="lead" style="margin-top:12px;">No es solo cuestión de citas — repartido entre las tres cosas que resuelve el Nivel Bronce, así se recupera la mensualidad:</p>
+    <p class="lead" style="margin-top:12px;">No es solo cuestión de citas — repartido entre las tres cosas que resuelve el Nivel Bronce:</p>
+
+    <div class="roi-case">
+      <p><strong>Tiempo.</strong> Supongamos que un diseño de color son 4 horas de trabajo por 400 € — eso son 100 € por cada hora tuya. Y supongamos que gestionar WhatsApp y la agenda a mano te quita unas 8 horas al mes. Esas 8 horas, a 100 € cada una, son <strong>800 €</strong> que hoy no facturas.</p>
+      <p><strong>Citas.</strong> Supongamos 200 citas al mes, con un ticket medio de 60 € (uno de tus servicios más económicos). Y supongamos que un 10% no se presenta — más bajo que el promedio del sector, porque tus clientas sí suelen venir. Son 20 citas perdidas, 1.200 €. Con un recordatorio automático, esa tasa baja a la mitad: 10 citas menos perdidas, es decir, <strong>600 €</strong> que recuperas.</p>
+      <p><strong>Reseñas.</strong> Supongamos que hoy casi nadie deja reseña porque nadie se la pide, aunque el 70% sí lo haría si se lo pidieran. Estudios externos vinculan cada estrella adicional con hasta un 9% más de ingresos — incluso una fracción conservadora de eso en Trends son unos <strong>400 €</strong> al mes en clientas nuevas que te encuentran gracias a mejor reputación.</p>
+    </div>
+
     <div class="ledger">
       <div class="ledger-row">
-        <span>Tiempo — 8 horas al mes en WhatsApp y agenda, a 100 €/hora</span>
+        <span>Tiempo recuperado</span>
         <span class="v">+800 €</span>
       </div>
-      <div class="ledger-row muted-row">
-        <span>Citas al mes (volumen conservador) / ticket medio (suposición)</span>
-        <span class="v">200 / 60 €</span>
-      </div>
       <div class="ledger-row">
-        <span>Citas — inasistencias del 10% bajan a la mitad con el recordatorio</span>
+        <span>Citas recuperadas</span>
         <span class="v">+600 €</span>
       </div>
       <div class="ledger-row">
-        <span>Reseñas — impacto estimado en ingresos (orientativo)</span>
+        <span>Reseñas — impacto estimado</span>
         <span class="v">+400 €</span>
       </div>
       <div class="ledger-row highlight">
