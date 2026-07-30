@@ -300,6 +300,31 @@
   .tier.t2 { --tier-color: var(--tier-2); }
   .tier.t3 { --tier-color: var(--tier-3); }
 
+  .tier.recommended {
+    border: 1px solid var(--tier-color);
+    border-top: 3px solid var(--tier-color);
+    box-shadow: 0 24px 60px -28px rgba(32,28,21,0.45);
+    transform: scale(1.04);
+    position: relative;
+    z-index: 1;
+  }
+  .tier.recommended:hover { transform: scale(1.04) translateY(-4px); }
+  @media (max-width: 860px) { .tier.recommended { transform: none; } .tier.recommended:hover { transform: translateY(-4px); } }
+
+  .recommended-tag {
+    position: absolute;
+    top: -13px;
+    left: 24px;
+    background: var(--tier-2);
+    color: var(--surface);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
   .tier-badge {
     display: inline-flex;
     align-items: center;
@@ -515,7 +540,8 @@
         </div>
       </div>
 
-      <div class="tier t2">
+      <div class="tier t2 recommended">
+        <div class="recommended-tag">Recomendado</div>
         <div class="tier-badge">
           <span class="roman">II</span>
           <span class="metal">Plata</span>
