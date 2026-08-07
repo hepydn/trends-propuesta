@@ -367,6 +367,58 @@
   }
   @media (max-width: 780px) { .feature-groups { grid-template-columns: 1fr; gap: 26px; } }
 
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 36px;
+    align-items: stretch;
+  }
+  @media (max-width: 860px) { .phases { grid-template-columns: 1fr; } }
+
+  .phase-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 26px 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .phase-label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .phase-block h3 { margin-top: 2px; }
+  .phase-block .phase-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .phase-block ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .phase-block ul li {
+    font-size: 0.88rem;
+    padding-left: 16px;
+    position: relative;
+  }
+  .phase-block ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
   .feature-group h3 {
     font-size: 1.08rem;
     font-variation-settings: 'opsz' 18, 'wght' 560, 'SOFT' 60, 'WONK' 0;
@@ -434,63 +486,60 @@
   <div class="divider"><span class="mark"></span></div>
 
   <section class="diagnostico reveal">
-    <div class="eyebrow">Sin tecnicismos</div>
-    <h2>Cómo funciona, en simple</h2>
-    <p class="lead" style="margin-top:12px;">Nada técnico — así es como lo vas a vivir tú, en el día a día.</p>
-    <div class="roi-case" style="margin-top:30px;">
-      <p><strong>Agenda.</strong> Vas a tener un asistente en WhatsApp que le habla a tus clientas por ti: agenda las citas, manda los recordatorios, y avisa cuando hace falta una prueba antes de un diseño de color o cuando dos tratamientos no se pueden hacer el mismo día. Tú sigues decidiendo cuándo se monta el color — el sistema solo se asegura de que nadie se salte el paso del diagnóstico.</p>
-      <p><strong>Fidelización.</strong> Después de cada cita, le pide a la clienta que deje una reseña. Si alguien deja de venir, le escribe para traerla de vuelta. En su cumpleaños, le manda un mensaje con una promoción. Y cuando compra algo en tu tienda, le avisa cuando toca reponerlo.</p>
-      <p><strong>Crecimiento.</strong> Aparte, te hacemos una página sencilla donde la gente puede reservar directamente, y ponemos anuncios en Meta por toda España — no solo Madrid — mostrando el contenido que tú ya sabes que funciona.</p>
-    </div>
-  </section>
+    <div class="eyebrow">Cómo lo vamos a construir</div>
+    <h2>Tres fases, un mismo embudo</h2>
+    <p class="lead" style="margin-top:12px;">Cada fase cubre una parte del recorrido de una clienta: recibirla, mantenerla, y que vuelva.</p>
 
-  <div class="divider"><span class="mark"></span></div>
-
-  <section class="roi reveal">
-    <div class="eyebrow">En números</div>
-    <h2>Lo que vas a ganar</h2>
-    <p class="lead" style="margin-top:12px;">Así se traduce en tiempo y dinero, con tus propios números:</p>
-
-    <div class="roi-case">
-      <p><strong>Tiempo.</strong> Un diseño de color son 4 horas de trabajo por 400 € — eso son 100 € por cada hora tuya. Si gestionar WhatsApp y la agenda a mano te quita unas 8 horas al mes, esas horas, a 100 € cada una, son <strong>800 €</strong> que hoy no facturas.</p>
-      <p><strong>Citas de color.</strong> Haces 3 diseños de color al día (hay días hasta 4), de 400 a 500 € cada uno — usamos 400 €, el extremo bajo, para no exagerar. Con 3 al día, 5 días a la semana, son 60 citas de color al mes. Un 10% que no se presenta son 6 citas perdidas, 2.400 €. Con un recordatorio automático, esa tasa baja a la mitad: 3 citas menos perdidas, <strong>1.200 €</strong> que recuperas.</p>
-      <p><strong>Reactivación.</strong> El recordatorio de recompra, el de retoque y los mensajes a clientas inactivas devuelven, aunque sea, unas 10 clientas al mes que hoy no volverían — campañas de reactivación como esta suelen recuperar entre un 10% y un 15% de la base inactiva. A tu corte (40 €, el servicio más económico), son <strong>400 €</strong> más.</p>
-    </div>
-
-    <div class="ledger">
-      <div class="ledger-row">
-        <span>Tiempo recuperado</span>
-        <span class="v">+800 €</span>
+    <div class="phases">
+      <div class="phase-block">
+        <div class="phase-label">Fase 1</div>
+        <h3>El primer contacto</h3>
+        <p class="phase-desc">El agente de WhatsApp recibe cada mensaje y responde al momento. Si piden un corte o un tinte, agenda directo. Si piden un diseño de color, mechas o balayage, primero explica que hace falta una prueba — y solo después de esa prueba se agenda la cita de color. Si piden dos químicos el mismo día, avisa de inmediato que no se pueden combinar.</p>
+        <ul>
+          <li>Agenda citas, conectado a tu Google Calendar</li>
+          <li>Gestiona cancelaciones y reprograma sin que tengas que intervenir</li>
+          <li>Explica la prueba previa antes de un diseño de color</li>
+          <li>Avisa si piden dos tratamientos químicos incompatibles</li>
+          <li>Guarda el historial y notas de cada clienta en un panel simple</li>
+        </ul>
       </div>
-      <div class="ledger-row">
-        <span>Citas de color recuperadas</span>
-        <span class="v">+1.200 €</span>
+      <div class="phase-block">
+        <div class="phase-label">Fase 2</div>
+        <h3>Recordatorio y seguimiento</h3>
+        <p class="phase-desc">Una vez que la clienta ya te conoce, el sistema se encarga de que no se te escape ni una cita ni una oportunidad de que vuelva.</p>
+        <ul>
+          <li>Recordatorio automático de cita</li>
+          <li>Recordatorio de retoque, cuando toca volver</li>
+          <li>Mensaje de cumpleaños con una promoción</li>
+          <li>Reactivación de clientas que llevan tiempo sin venir</li>
+          <li>Recordatorio de recompra de productos de tu tienda</li>
+          <li>Solicitud de reseña en Google tras cada cita</li>
+          <li>Reporte mensual con lo que fue pasando</li>
+        </ul>
       </div>
-      <div class="ledger-row">
-        <span>Reactivación de clientas</span>
-        <span class="v">+400 €</span>
-      </div>
-      <div class="ledger-row highlight">
-        <span>Total que recuperas al mes</span>
-        <span class="v">+2.400 €</span>
-      </div>
-      <div class="ledger-row">
-        <span>Mensualidad flexible (sin cuota de alta)</span>
-        <span class="v">−699 €</span>
-      </div>
-      <div class="ledger-row total">
-        <span>Ganancia neta al mes</span>
-        <span class="v">1.701 €</span>
+      <div class="phase-block">
+        <div class="phase-label">Fase 3</div>
+        <h3>Landing y Meta Ads</h3>
+        <p class="phase-desc">Aquí ya no se trata de mantener a quien ya te conoce, sino de que te encuentren clientas nuevas — en toda España, no solo Madrid.</p>
+        <ul>
+          <li>Página sencilla con reserva de cita integrada</li>
+          <li>Creación y gestión de las campañas de Meta Ads</li>
+          <li>Lista de espera automática para huecos por cancelación</li>
+          <li>Soporte prioritario</li>
+        </ul>
       </div>
     </div>
-    <p class="lead" style="margin-top:22px;">El precio-hora sale de tu propia tarifa; el volumen de color (3 al día) es el número conservador que diste, no el de días de 4. La captación activa de clientas nuevas (Ads) suma encima, sin techo fijo — depende de cuánto decidas invertir en anuncios.</p>
+
+    <div class="payment-note" style="margin-top:28px;">
+      <p><strong>Sobre los anuncios de Meta.</strong> Mi mensualidad cubre que yo cree, gestione y optimice las campañas. Lo que no incluye es el dinero que se le paga directamente a Meta para que esos anuncios se muestren — ese presupuesto lo decides y lo pagas tú, aparte, directamente a Meta. Así tienes control total de cuánto invertir cada mes, y puedes subirlo o bajarlo cuando quieras.</p>
+    </div>
   </section>
 
   <div class="divider"><span class="mark"></span></div>
 
   <section class="package-section reveal">
-    <h2>Todo lo incluido</h2>
-    <p class="lead tiers-intro">Para que quede claro y a mano, así queda organizado todo lo que hablamos.</p>
+    <h2>Precio</h2>
+    <p class="lead tiers-intro">Las tres fases, en un mismo sistema — sin niveles ni sorpresas.</p>
 
     <div class="billing-toggle" role="tablist" aria-label="Forma de pago">
       <button type="button" class="toggle-btn active" data-billing="monthly" role="tab" aria-selected="true">Flexible</button>
@@ -512,40 +561,6 @@
         </div>
         <div class="package-timeline">Implementación · 3–4 semanas</div>
 
-        <div class="feature-groups">
-          <div class="feature-group">
-            <h3>Agenda y citas</h3>
-            <ul>
-              <li>Agente de WhatsApp que agenda citas, conectado a Google Calendar</li>
-              <li>Corte y tinte se agendan directo; diseño de color, mechas o balayage solo permiten reservar la prueba/diagnóstico previo primero — la cita de color se agenda después, según el resultado</li>
-              <li>Avisa de inmediato si piden dos químicos juntos (ej. mechas + alisado) — no se pueden combinar en la misma cita</li>
-              <li>Gestión de cancelaciones — reprograma o libera el hueco sin intervención manual</li>
-              <li>Recordatorio automático de cita (reduce no-shows)</li>
-              <li>Panel simple en Airtable — historial y notas de cada clienta, quién pidió, quién confirmó</li>
-            </ul>
-          </div>
-          <div class="feature-group">
-            <h3>Fidelización</h3>
-            <ul>
-              <li>Mensaje de cumpleaños con promoción</li>
-              <li>Recordatorio de retoque — avisa cuando toca volver</li>
-              <li>Recordatorio de recompra de tu tienda online</li>
-              <li>Reactivación de clientas inactivas, con incentivo</li>
-              <li>Solicitud automática de reseña en Google tras cada cita</li>
-              <li>Reporte mensual — citas, reseñas, clientas reactivadas</li>
-            </ul>
-          </div>
-          <div class="feature-group">
-            <h3>Crecimiento</h3>
-            <ul>
-              <li>Landing page / mini-web con reserva de cita integrada</li>
-              <li>Gestión de Meta Ads en España (no solo Madrid) — amplificando el contenido que tú eliges, conectados al mismo embudo</li>
-              <li>Lista de espera automática — si alguien cancela, se ofrece el hueco a quien esperaba</li>
-              <li>Soporte prioritario — respuesta más rápida, ajustes incluidos</li>
-            </ul>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -564,7 +579,7 @@
     <p class="lead">El sistema se monta de una vez, completo — la implementación toma entre 3 y 4 semanas, y a partir de ahí queda funcionando solo.</p>
   </section>
 
-  <div class="fine-print">Precios, tiempos de implementación y alcance son estimaciones de esta propuesta, sujetas a confirmación final antes de empezar. El promedio de reseñas en el mapa de Google es una cifra orientativa (BrightLocal). El ejemplo de recuperación en euros usa datos reales de Trends (100€/hora, 3 diseños de color al día a 400-500€, 40€ el corte de mujer, según su propia tarifa) junto con suposiciones conservadoras de horas ahorradas, inasistencias y reactivación de clientas (10-15%, rango habitual en campañas de este tipo) — estas últimas no están medidas en el negocio.</div>
+  <div class="fine-print">Precios, tiempos de implementación y alcance son estimaciones de esta propuesta, sujetas a confirmación final antes de empezar.</div>
 
 </div>
 
